@@ -56,8 +56,7 @@
   <script>
 
 var db = firebase.database().ref('home');
-    var sled1=false;
-  var sled2=false;
+    
 // último estado
 db.on('value', function(data){
    console.log("data: ", data.val());
@@ -68,14 +67,14 @@ $("#checkLed1").click(function(){
   var estado = $(this).is(':checked');
   db.update({
     led1:estado
-    display:estado;
+    display:led1;
   });
 });
 $("#checkLed2").click(function(){
   var estado = $(this).is(':checked');
   db.update({
     led2:estado
-    display:estado;   
+    display:led2;   
   });
 });
   </script>
